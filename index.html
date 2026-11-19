@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Բարձր տեխնոլոգիական ընկերությունների աճի որակի համակարգված գնահատում․ հետազոտության արդյունքներ և գիտաժողովին մասնակցության ընթացք։">
+  <title>Աճի որակի գնահատում | Հոդվածի ներկայացում</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+Armenian:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --navy: #10213d;
+      --blue: #2563eb;
+      --cyan: #27b6c8;
+      --ink: #19243a;
+      --muted: #637087;
+      --paper: #f5f7fb;
+      --line: #e5eaf2;
+      --green: #16866c;
+      --white: #fff;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 88px;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Manrope", "Noto Sans Armenian", sans-serif;
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+
+    .topbar {
+      height: 5px;
+      background: linear-gradient(90deg, var(--blue), var(--cyan), #8fd9ce);
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      max-width: 1180px;
+      min-height: 72px;
+      margin: auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      color: white;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      box-shadow: 0 7px 18px rgba(37,99,235,.22);
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: #566278;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover { color: var(--blue); }
+
+    .fullscreen-btn {
+      border: 0;
+      border-radius: 9px;
+      padding: 9px 12px;
+      color: white;
+      background: var(--blue);
+      font-size: 11px;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .fullscreen-btn:hover { background: #174fc7; }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 23px;
+      cursor: pointer;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      background:
+        radial-gradient(ellipse at 78% 13%, rgba(39,182,200,.22), transparent 31%),
+        radial-gradient(ellipse at 4% 100%, rgba(37,99,235,.35), transparent 36%),
+        linear-gradient(120deg, #10213d, #172e50 58%, #123a50);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1180px;
+      margin: auto;
+      padding: 84px 24px 78px;
+      display: grid;
+      grid-template-columns: 1.45fr .75fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      border: 1px solid rgba(255,255,255,.19);
+      border-radius: 30px;
+      padding: 7px 13px;
+      color: #d1edf4;
+      background: rgba(255,255,255,.06);
+      font-size: 11px;
+      letter-spacing: .04em;
+    }
+
+    .eyebrow span {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #62dec9;
+    }
+
+    h1 {
+      margin: 21px 0 18px;
+      font-size: clamp(32px, 4.2vw, 55px);
+      line-height: 1.18;
+      letter-spacing: -.04em;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: 0;
+      color: #c5d1e2;
+      font-size: 15px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 800;
+      transition: .2s;
+    }
+
+    .btn-primary { color: #123; background: #fff; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px #07152a66; }
+    .btn-ghost { color: #fff; border: 1px solid #ffffff45; }
+    .btn-ghost:hover { background: #ffffff12; }
+
+    .hero-card {
+      padding: 24px;
+      border: 1px solid #ffffff24;
+      border-radius: 20px;
+      background: linear-gradient(145deg, #ffffff18, #ffffff08);
+      box-shadow: 0 24px 60px #07152a30;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-card-label {
+      color: #9fb2cb;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-weight: 800;
+    }
+
+    .hero-card h2 { margin: 10px 0 15px; font-size: 20px; line-height: 1.45; }
+    .authors { color: #d8e2ef; font-size: 12px; }
+
+    .hero-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 11px;
+      margin-top: 21px;
+    }
+
+    .meta-box { border-top: 1px solid #ffffff24; padding-top: 12px; }
+    .meta-box b { display: block; font-size: 17px; }
+    .meta-box span { color: #afbdd0; font-size: 10px; }
+
+    .section {
+      max-width: 1180px;
+      margin: auto;
+      padding: 76px 24px;
+    }
+
+    .section-head { max-width: 720px; margin-bottom: 30px; }
+
+    .kicker {
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    h2.section-title {
+      margin: 7px 0 10px;
+      color: var(--navy);
+      font-size: clamp(25px, 3vw, 36px);
+      letter-spacing: -.035em;
+      line-height: 1.25;
+    }
+
+    .section-head p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .overview-card, .card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--white);
+      box-shadow: 0 7px 24px rgba(26,43,73,.035);
+    }
+
+    .overview-card { padding: 21px; }
+
+    .icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 14px;
+      border-radius: 13px;
+      color: var(--blue);
+      background: #edf3ff;
+      font-size: 20px;
+    }
+
+    .overview-card h3 { margin: 0 0 7px; font-size: 15px; }
+    .overview-card p { margin: 0; color: var(--muted); font-size: 12px; }
+
+    .method {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .method-inner, .results-inner, .conference-inner {
+      max-width: 1180px;
+      margin: auto;
+      padding: 74px 24px;
+    }
+
+    .method-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .method-copy p { color: var(--muted); font-size: 14px; }
+
+    .formula {
+      margin: 18px 0;
+      padding: 18px 20px;
+      border-radius: 13px;
+      color: #dceaff;
+      background: var(--navy);
+      font-family: Georgia, serif;
+      font-size: 17px;
+    }
+
+    .formula small {
+      display: block;
+      margin-top: 7px;
+      color: #9eb5d2;
+      font-family: "Manrope", sans-serif;
+      font-size: 10px;
+    }
+
+    .metric-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .metric {
+      min-height: 80px;
+      display: flex;
+      gap: 11px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #f8faff;
+    }
+
+    .metric .num {
+      flex: 0 0 27px;
+      height: 27px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      color: var(--blue);
+      background: #e7efff;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .metric b { display: block; font-size: 12px; }
+    .metric span { color: var(--muted); font-size: 10px; }
+    .metric.negative .num { color: #b56b13; background: #fff0dc; }
+
+    .results { background: linear-gradient(180deg, #f5f7fb, #edf3f9); }
+
+    .result-top {
+      display: grid;
+      grid-template-columns: 1fr .9fr;
+      gap: 22px;
+    }
+
+    .chart-card { padding: 25px; }
+
+    .chart-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      gap: 12px;
+      margin-bottom: 21px;
+    }
+
+    .chart-title h3 { margin: 0; font-size: 15px; }
+    .chart-title span { color: var(--muted); font-size: 10px; }
+
+    .bar-row {
+      display: grid;
+      grid-template-columns: 88px 1fr 48px;
+      align-items: center;
+      gap: 11px;
+      margin: 15px 0;
+      font-size: 11px;
+    }
+
+    .bar-name { font-weight: 700; }
+    .bar-track { height: 11px; overflow: hidden; border-radius: 20px; background: #edf0f5; }
+
+    .bar-fill {
+      width: var(--value);
+      height: 100%;
+      border-radius: 20px;
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
+    }
+
+    .bar-row:first-of-type .bar-fill { background: linear-gradient(90deg, #7a5af8, #29b5c8); }
+    .bar-value { text-align: right; font-weight: 800; font-variant-numeric: tabular-nums; }
+    .scale { display: flex; justify-content: space-between; margin-top: 4px; padding-left: 99px; color: #98a2b3; font-size: 9px; }
+
+    .insight-card {
+      position: relative;
+      overflow: hidden;
+      padding: 26px;
+      border-radius: 16px;
+      color: white;
+      background: linear-gradient(145deg, #17375b, #10213d);
+    }
+
+    .insight-card::after {
+      content: "";
+      position: absolute;
+      right: -50px;
+      bottom: -95px;
+      width: 190px;
+      height: 190px;
+      border: 1px solid #ffffff1b;
+      border-radius: 50%;
+      box-shadow: 0 0 0 25px #ffffff08;
+    }
+
+    .insight-card .kicker { color: #79d8d1; }
+    .insight-card h3 { position: relative; z-index: 1; margin: 9px 0; font-size: 21px; line-height: 1.4; }
+    .insight-card p { position: relative; z-index: 1; color: #c1d1e5; font-size: 12px; }
+
+    .leader-pills {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 19px;
+    }
+
+    .pill { padding: 7px 10px; border: 1px solid #ffffff27; border-radius: 30px; font-size: 10px; }
+
+    .trend-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 15px;
+      margin-top: 18px;
+    }
+
+    .trend-card { padding: 18px; }
+    .trend-card h4 { margin: 0 0 7px; font-size: 13px; }
+    .trend-card p { margin: 0; color: var(--muted); font-size: 11px; }
+    .trend-label { margin-top: 12px; font-size: 10px; font-weight: 800; }
+    .up { color: var(--green); }
+    .down { color: #bd6d36; }
+
+    .structure-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 15px; }
+
+    .structure-card { display: flex; gap: 15px; padding: 21px; }
+
+    .structure-no {
+      flex: 0 0 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      color: var(--blue);
+      background: #edf3ff;
+      font-weight: 800;
+    }
+
+    .structure-card h3 { margin: 1px 0 5px; font-size: 14px; }
+    .structure-card p { margin: 0; color: var(--muted); font-size: 12px; }
+    .structure-card:last-child { grid-column: 1 / -1; }
+
+    .conference { color: white; background: var(--navy); }
+    .conference .section-title { color: white; }
+    .conference .section-head p { color: #b6c5d9; }
+
+    /* Գիտաժողովի քայլերը՝ մեկ էջ/քայլ, մեծ պատկերով */
+    .conference-inner { max-width: 1180px; }
+
+    .conference-step {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(290px, .8fr);
+      gap: 30px;
+      align-items: center;
+      margin-top: 30px;
+      padding: 26px;
+      border: 1px solid #ffffff20;
+      border-radius: 18px;
+      background: linear-gradient(145deg, #ffffff0d, #ffffff05);
+    }
+
+    .conference-step + .conference-step { margin-top: 22px; }
+
+    .conference-step:nth-of-type(even) .step-image-wrap { order: -1; }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 10px;
+      color: #79d8d1;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .step-number b {
+      display: grid;
+      width: 32px;
+      height: 32px;
+      place-items: center;
+      border-radius: 10px;
+      color: white;
+      background: var(--blue);
+      letter-spacing: 0;
+    }
+
+    .conference-step h3 {
+      margin: 0 0 9px;
+      font-size: 20px;
+      line-height: 1.4;
+    }
+
+    .conference-step p {
+      margin: 0;
+      color: #b9c9dd;
+      font-size: 13px;
+    }
+
+    .step-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 15px;
+      color: #8ee1c5;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .step-status::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #62d5ab;
+    }
+
+    .step-image-wrap {
+      overflow: hidden;
+      border: 1px solid #ffffff25;
+      border-radius: 13px;
+      background: #e8edf3;
+      box-shadow: 0 14px 35px rgba(0,0,0,.2);
+    }
+
+    .step-image {
+      display: block;
+      width: 100%;
+      height: 340px;
+      object-fit: contain;
+      cursor: zoom-in;
+    }
+
+    .lightbox {
+      position: fixed;
+      z-index: 1000;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 25px;
+      background: rgba(5,12,25,.92);
+    }
+
+    .lightbox.open { display: flex; }
+
+    .lightbox img {
+      max-width: 95vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      border: 0;
+      color: white;
+      background: transparent;
+      font-size: 34px;
+      cursor: pointer;
+    }
+
+    .footer {
+      padding: 25px 24px;
+      color: #aebbd0;
+      background: #0b172b;
+      text-align: center;
+      font-size: 10px;
+    }
+
+    .footer b { color: #fff; }
+
+    @media (max-width: 900px) {
+      .nav-links { gap: 12px; font-size: 11px; }
+      .nav-right { gap: 10px; }
+      .hero-inner, .method-grid, .result-top { grid-template-columns: 1fr; }
+      .hero-inner { gap: 30px; padding-top: 58px; }
+      .hero-card { max-width: 580px; }
+      .conference-step { grid-template-columns: 1fr; }
+      .conference-step:nth-of-type(even) .step-image-wrap { order: 0; }
+      .step-image { height: 380px; }
+    }
+
+    @media (max-width: 650px) {
+      .nav-inner { min-height: 62px; }
+      .menu-btn { display: block; }
+      .nav-right { gap: 8px; }
+      .fullscreen-btn { padding: 8px 9px; font-size: 10px; }
+
+      .nav-links {
+        position: absolute;
+        top: 62px;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 18px 24px;
+        border-bottom: 1px solid var(--line);
+        background: white;
+      }
+
+      .nav-links.open { display: flex; }
+      .brand { font-size: 12px; }
+      .brand small { font-size: 9px; }
+
+      .hero-inner, .section, .method-inner, .results-inner, .conference-inner {
+        padding-right: 18px;
+        padding-left: 18px;
+      }
+
+      .hero-inner { padding-top: 48px; padding-bottom: 52px; }
+
+      .overview-grid, .metric-list, .structure-grid, .trend-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .structure-card:last-child { grid-column: auto; }
+      .bar-row { grid-template-columns: 72px 1fr 46px; gap: 8px; }
+      .scale { padding-left: 80px; }
+      .chart-card, .insight-card { padding: 19px; }
+
+      .conference-step { padding: 17px; }
+      .conference-step h3 { font-size: 17px; }
+      .step-image { height: 300px; }
+
+      .lightbox { padding: 12px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar"></div>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#home" aria-label="Գլխավոր էջ">
+        <span class="brand-mark">GQ</span>
+        <span>Հետազոտական նախագիծ<small>Հոդվածի ներկայացում · 2026</small></span>
+      </a>
+
+      <button class="menu-btn" aria-label="Բացել ընտրացանկը"
+        onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="#about">Հետազոտության մասին</a>
+          <a href="#method">Մեթոդաբանություն</a>
+          <a href="#results">Արդյունքներ</a>
+          <a href="#structure">Հոդվածի կառուցվածք</a>
+          <a href="#conference">Գիտաժողով</a>
+        </div>
+        <button class="fullscreen-btn" id="fullscreenBtn" type="button">Ամբողջ էկրան</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow"><span></span> ԳԻՏԱԺՈՂՈՎԻՆ ՆԵՐԿԱՅԱՑՎԱԾ ՀԵՏԱԶՈՏՈՒԹՅՈՒՆ</div>
+        <h1>Բարձր տեխնոլոգիական ընկերությունների աճի որակի գնահատում</h1>
+        <p>Հոդվածում համեմատվում է վեց խոշոր տեխնոլոգիական ընկերությունների ֆինանսական աճի որակը՝ 2012–2025 թթ. տվյալների հիման վրա։ Այստեղ ներկայացված են հետազոտության նպատակը, մեթոդները, հիմնական արդյունքները և գիտաժողովին դիմելու ընթացքը։</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#results">Տեսնել արդյունքները <span>↓</span></a>
+          <a class="btn btn-ghost" href="#conference">Դիմելու քայլերը <span>↗</span></a>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <div class="hero-card-label">Հոդվածի տվյալներ</div>
+        <h2>Համակարգված գնահատում<br>(2011–2025 թթ.)</h2>
+        <div class="authors">Հերմինե Հակոբյան · Սոֆյա Հարոյան<br>Հայկուհի Սարգսյան · Արաքսյա Դարբինյան</div>
+        <div class="hero-meta">
+          <div class="meta-box"><b>6</b><span>ուսումնասիրված ընկերություն</span></div>
+          <div class="meta-box"><b>7</b><span>ֆինանսական ցուցանիշ</span></div>
+          <div class="meta-box"><b>14 տարի</b><span>համադրելի տվյալներ</span></div>
+          <div class="meta-box"><b>GQI</b><span>աճի որակի ինդեքս</span></div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="about">
+      <div class="section-head">
+        <div class="kicker">01 · Հետազոտության գաղափարը</div>
+        <h2 class="section-title">Ի՞նչ հարցի է պատասխանում հոդվածը</h2>
+        <p>Ընկերության արագ աճը ինքնին դեռ չի նշանակում, որ այդ աճը կայուն և արդյունավետ է։ Հետազոտությունը գնահատում է աճի տարբեր կողմերը միասին՝ ֆինանսական արդյունքներից մինչև պարտքային բեռը։</p>
+      </div>
+
+      <div class="overview-grid">
+        <article class="overview-card">
+          <div class="icon">◉</div>
+          <h3>Հետազոտության նպատակը</h3>
+          <p>Գնահատել Alphabet-ի, Apple-ի, Microsoft-ի, Amazon-ի, Meta-ի և NVIDIA-ի աճի որակը 2012–2025 թթ. ընթացքում։</p>
+        </article>
+        <article class="overview-card">
+          <div class="icon">⌁</div>
+          <h3>Հիմնական մոտեցումը</h3>
+          <p>Միավորել աճը, շահութաբերությունը և ֆինանսական կայունությունը մեկ՝ Growth Quality Index (GQI) համակցված ինդեքսում։</p>
+        </article>
+        <article class="overview-card">
+          <div class="icon">◎</div>
+          <h3>Գործնական արժեքը</h3>
+          <p>Օգնել համեմատել ընկերություններին ոչ միայն ըստ չափի, այլև ըստ աճի արդյունավետության և ֆինանսական կայունության։</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="method" id="method">
+      <div class="method-inner">
+        <div class="section-head">
+          <div class="kicker">02 · Հետազոտության մեթոդաբանությունը</div>
+          <h2 class="section-title">Ինչպե՞ս է կառուցվել GQI-ն</h2>
+          <p>Ֆինանսական տվյալները հավաքագրվել են Macrotrends-ից և համադրվել ընկերությունների պաշտոնական տարեկան հաշվետվությունների (10-K) հետ։</p>
+        </div>
+
+        <div class="method-grid">
+          <div class="method-copy">
+            <p>2011 թ. որոշ բացակայող դիտարկումների պատճառով համադրելիության համար հիմնական վերլուծությունն իրականացվել է 2012–2025 թթ.՝ յուրաքանչյուր ընկերության համար 14 տարվա տվյալներով։ Ցուցանիշները բերվել են 0–1 միջակայքի, ապա համադրվել հավասար կշիռներով։</p>
+            <div class="formula">
+              GQIᵢₜ = (1 / 7) ∑ⱼ₌₁⁷ Zᵢₜⱼ
+              <small>Յոթ նորմալացված ցուցանիշների պարզ թվաբանական միջին · յուրաքանչյուր կշիռը՝ 1/7</small>
+            </div>
+            <p><strong>Զգայունության ստուգում․</strong> NVIDIA-ի ռեկորդային արժեքների ազդեցությունը ստուգելու համար կիրառվել է 95-րդ պերցենտիլով ծայրահեղ արժեքների սահմանափակում (winsorization)։</p>
+          </div>
+
+          <div class="metric-list">
+            <div class="metric"><div class="num">01</div><div><b>Հասույթի աճ</b><span>Վաճառքների ընդլայնման կարողություն</span></div></div>
+            <div class="metric"><div class="num">02</div><div><b>Զուտ շահույթի աճ</b><span>Հասույթի աճի վերածումը շահույթի</span></div></div>
+            <div class="metric"><div class="num">03</div><div><b>Ազատ դրամական հոսքերի աճ</b><span>FCF-ի փոփոխությունը ժամանակի ընթացքում</span></div></div>
+            <div class="metric"><div class="num">04</div><div><b>Գործառնական մարժա</b><span>Գործառնական արդյունավետություն</span></div></div>
+            <div class="metric"><div class="num">05</div><div><b>ROA</b><span>Ակտիվների օգտագործման արդյունավետություն</span></div></div>
+            <div class="metric"><div class="num">06</div><div><b>ROE</b><span>Բաժնետերերի կապիտալի եկամտաբերություն</span></div></div>
+            <div class="metric negative"><div class="num">07</div><div><b>D/E հարաբերակցություն</b><span>Հակադարձ ցուցանիշ․ պարտքի աճը նվազեցնում է գնահատականը</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="results" id="results">
+      <div class="results-inner">
+        <div class="section-head">
+          <div class="kicker">03 · Էմպիրիկ արդյունքներ</div>
+          <h2 class="section-title">Ո՞վ է ապահովել աճի ավելի բարձր որակ</h2>
+          <p>Գծապատկերը ցույց է տալիս 2012–2025 թթ. միջին GQI արժեքները։ Ավելի բարձր ինդեքսը նշանակում է, որ ընտրված չափանիշների համադրությունը տվյալ ընկերության համար ավելի նպաստավոր է եղել։</p>
+        </div>
+
+        <div class="result-top">
+          <div class="card chart-card">
+            <div class="chart-title">
+              <div><h3>Միջին GQI՝ ըստ ընկերությունների</h3><span>2012–2025 թթ. · 0–1 սանդղակ</span></div>
+              <span>GQI</span>
+            </div>
+
+            <div class="bar-row"><span class="bar-name">NVIDIA</span><div class="bar-track"><div class="bar-fill" style="--value:61.35%"></div></div><span class="bar-value">0.6135</span></div>
+            <div class="bar-row"><span class="bar-name">Meta</span><div class="bar-track"><div class="bar-fill" style="--value:57.32%"></div></div><span class="bar-value">0.5732</span></div>
+            <div class="bar-row"><span class="bar-name">Apple</span><div class="bar-track"><div class="bar-fill" style="--value:42.81%"></div></div><span class="bar-value">0.4281</span></div>
+            <div class="bar-row"><span class="bar-name">Alphabet</span><div class="bar-track"><div class="bar-fill" style="--value:41.90%"></div></div><span class="bar-value">0.4190</span></div>
+            <div class="bar-row"><span class="bar-name">Microsoft</span><div class="bar-track"><div class="bar-fill" style="--value:41.05%"></div></div><span class="bar-value">0.4105</span></div>
+            <div class="bar-row"><span class="bar-name">Amazon</span><div class="bar-track"><div class="bar-fill" style="--value:24.02%"></div></div><span class="bar-value">0.2402</span></div>
+            <div class="scale"><span>0</span><span>0.25</span><span>0.50</span><span>0.75</span><span>1.00</span></div>
+          </div>
+
+          <aside class="insight-card">
+            <div class="kicker">Հիմնական բացահայտում</div>
+            <h3>Աճի մեծ ծավալը դեռ բարձր որակի աճ չի երաշխավորում։</h3>
+            <p>Amazon-ի օրինակը ցույց է տալիս, որ հասույթի մեծ ծավալների դեպքում ցածր մարժաներն ու պարտքային բեռը կարող են ուղեկցվել համեմատաբար ցածր GQI-ով։</p>
+            <div class="leader-pills">
+              <span class="pill">Առաջատար՝ NVIDIA · 0.6135</span>
+              <span class="pill">Երկրորդ՝ Meta · 0.5732</span>
+              <span class="pill">Վերջին՝ Amazon · 0.2402</span>
+            </div>
+          </aside>
+        </div>
+
+        <div class="trend-grid">
+          <article class="card trend-card">
+            <h4>Դրական միտում</h4>
+            <p>Ինդեքսի դրական փոփոխություն է արձանագրվել NVIDIA-ի, Meta-ի և Amazon-ի մոտ։</p>
+            <div class="trend-label up">↑ NVIDIA · Meta · Amazon</div>
+          </article>
+          <article class="card trend-card">
+            <h4>Չափավոր անկում</h4>
+            <p>Ժամանակահատվածի ընթացքում GQI-ի չափավոր անկում է նկատվել երեք ընկերության մոտ։</p>
+            <div class="trend-label down">↓ Alphabet · Apple · Microsoft</div>
+          </article>
+          <article class="card trend-card">
+            <h4>Արդյունքների կայունություն</h4>
+            <p>95-րդ պերցենտիլով զգայունության թեստը հաստատել է NVIDIA-ի առաջատար դիրքի կայունությունը։</p>
+            <div class="trend-label up">✓ Զգայունության թեստ</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="structure">
+      <div class="section-head">
+        <div class="kicker">04 · Հոդվածի կառուցվածքը</div>
+        <h2 class="section-title">Ո՞ր բաժնում ի՞նչ է արվել</h2>
+        <p>Հոդվածի տրամաբանությունը կառուցված է հետազոտական հարցից դեպի մեթոդաբանություն, տվյալների վերլուծություն և եզրակացություններ։</p>
+      </div>
+
+      <div class="structure-grid">
+        <article class="card structure-card">
+          <div class="structure-no">01</div>
+          <div><h3>Նախաբան</h3><p>Սահմանվել է աճի որակի հասկացությունը, ներկայացվել է թեմայի արդիականությունը, գրականության համառոտ դիտարկումը, նպատակը և հետազոտության նորույթը։</p></div>
+        </article>
+        <article class="card structure-card">
+          <div class="structure-no">02</div>
+          <div><h3>Մեթոդաբանություն</h3><p>Նկարագրվել են ընտրված ընկերությունները, տվյալների աղբյուրները, յոթ ֆինանսական բաղադրիչները, Min–Max նորմալացումը, հավասար կշիռներն ու զգայունության թեստը։</p></div>
+        </article>
+        <article class="card structure-card">
+          <div class="structure-no">03</div>
+          <div><h3>Վերլուծություն և արդյունքներ</h3><p>Համեմատվել են ընկերությունների միջին GQI-ները, ներկայացվել է դասակարգումը և մեկնաբանվել են ինդեքսի հիմնական շարժիչները։</p></div>
+        </article>
+        <article class="card structure-card">
+          <div class="structure-no">04</div>
+          <div><h3>Քննարկում</h3><p>Մեկնաբանվել են արդյունքների տնտեսական իմաստը, Amazon-ի և NVIDIA-ի օրինակները, ինչպես նաև հետազոտության սահմանափակումները։</p></div>
+        </article>
+        <article class="card structure-card">
+          <div class="structure-no">05</div>
+          <div><h3>Եզրահանգում</h3><p>Ամփոփվել է, որ բարձրորակ աճը կախված է ոչ միայն ընդլայնման տեմպերից, այլև շահութաբերությունից, ազատ դրամական հոսքերից և կապիտալի կառուցվածքից։</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="conference" id="conference">
+      <div class="conference-inner">
+        <div class="section-head">
+          <div class="kicker">05 · Գիտաժողովին մասնակցության ընթացքը</div>
+          <h2 class="section-title">Հոդվածի ներկայացման քայլերը</h2>
+          <p>Յուրաքանչյուր քայլ ներկայացված է առանձին՝ համապատասխան սքրինշոթով։ Սեղմեք նկարի վրա՝ այն մեծացնելու համար։</p>
+        </div>
+
+        <article class="conference-step">
+          <div class="step-copy">
+            <div class="step-number"><b>1</b> Քայլ 1 / 5</div>
+            <h3>Ընտրվել է գիտաժողովի ուղղությունը</h3>
+            <p>Դիմումի ձևում ընտրվել են «Հասարակական և հումանիտար գիտություններ» ուղղությունը, «Տնտեսական գիտություններ» բաժինը և «Տնտեսագիտություն» ենթաբաժինը։</p>
+            <span class="step-status">Կատարված է</span>
+          </div>
+          <div class="step-image-wrap">
+            <img class="step-image" src="./Screenshot%202026-10-31-01.png" alt="Գիտաժողովի բաժինների ընտրություն">
+          </div>
+        </article>
+
+        <article class="conference-step">
+          <div class="step-copy">
+            <div class="step-number"><b>2</b> Քայլ 2 / 5</div>
+            <h3>Լրացվել են հեղինակների տվյալները</h3>
+            <p>Մուտքագրվել են հիմնական հեղինակի, համահեղինակների և գիտական ղեկավարի տվյալները։ Նշվել են նաև հաստատությունը և հեղինակներին վերաբերող անհրաժեշտ տեղեկությունները։</p>
+            <span class="step-status">Կատարված է</span>
+          </div>
+          <div class="step-image-wrap">
+            <img class="step-image" src="./Screenshot%202026-10-31-02.png" alt="Հեղինակների տվյալների լրացում">
+          </div>
+        </article>
+
+        <article class="conference-step">
+          <div class="step-copy">
+            <div class="step-number"><b>3</b> Քայլ 3 / 5</div>
+            <h3>Մուտքագրվել են հոդվածի տվյալները</h3>
+            <p>Լրացվել են հոդվածի վերնագիրը, բանալի բառերն ու անոտացիան, և կցվել է հոդվածի ֆայլը։</p>
+            <span class="step-status">Կատարված է</span>
+          </div>
+          <div class="step-image-wrap">
+            <img class="step-image" src="./Screenshot%202026-10-31-03.png" alt="Հոդվածի տվյալներ և կցված ֆայլ">
+          </div>
+        </article>
+
+        <article class="conference-step">
+          <div class="step-copy">
+            <div class="step-number"><b>4</b> Քայլ 4 / 5</div>
+            <h3>Հայտն ուղարկվել է կազմակերպիչներին</h3>
+            <p>Հոդվածի տվյալները ստուգելուց հետո հայտը ուղարկվել է։ Կայքում ցուցադրվել է ուղարկման հաջողության հաստատումը։</p>
+            <span class="step-status">Ուղարկված է</span>
+          </div>
+          <div class="step-image-wrap">
+            <img class="step-image" src="./Screenshot%202026-10-31-04.png" alt="Հայտի ուղարկման հաստատում">
+          </div>
+        </article>
+
+        <article class="conference-step">
+          <div class="step-copy">
+            <div class="step-number"><b>5</b> Քայլ 5 / 5</div>
+            <h3>Ստացվել է հաստատումը</h3>
+            <p>Ստացվել է գիտաժողովին մասնակցության հաստատումը, և հոդվածը ներառվել է գիտաժողովի հոդվածների ցանկում։</p>
+            <span class="step-status">Հաստատված է</span>
+          </div>
+          <div class="step-image-wrap">
+            <img class="step-image" src="./Screenshot%202026-11-31-05.png" alt="Հոդվածը գիտաժողովի հոդվածների ցանկում">
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <b>Հետազոտական նախագիծ · 2026</b><br>
+    «Բարձր տեխնոլոգիական ընկերությունների աճի որակի համակարգված գնահատումը (2011–2025 թթ.)»
+  </footer>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-label="Նկարի մեծ դիտում" aria-modal="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Փակել նկարը">×</button>
+    <img id="lightboxImage" alt="Մեծացված սքրինշոթ">
+  </div>
+
+  <script>
+    document.getElementById("fullscreenBtn").addEventListener("click", async () => {
+      try {
+        if (!document.fullscreenElement) {
+          await document.documentElement.requestFullscreen();
+        } else {
+          await document.exitFullscreen();
+        }
+      } catch (error) {
+        alert("Ամբողջ էկրանով դիտումը հասանելի չէ այս զննարկչում։");
+      }
+    });
+
+    document.addEventListener("fullscreenchange", () => {
+      document.getElementById("fullscreenBtn").textContent =
+        document.fullscreenElement ? "Փակել ամբողջ էկրանը" : "Ամբողջ էկրան";
+    });
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+
+    document.querySelectorAll(".step-image").forEach(image => {
+      image.addEventListener("click", () => {
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt;
+        lightbox.classList.add("open");
+      });
+
+      image.addEventListener("error", () => {
+        console.error("Նկարը չի գտնվել․ ստուգեք ֆայլի անունն ու պանակը:", image.getAttribute("src"));
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      lightboxImage.removeAttribute("src");
+    }
+
+    document.getElementById("lightboxClose").addEventListener("click", closeLightbox);
+
+    lightbox.addEventListener("click", event => {
+      if (event.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") closeLightbox();
+    });
+  </script>
+</body>
+</html>
